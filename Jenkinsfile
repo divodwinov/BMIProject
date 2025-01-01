@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'divodwinov/BMIProject:latest'
-        CONTAINER_NAME = 'BMICalculator'
+        DOCKER_IMAGE = 'divodwinov/bmiproject:latest'
+        CONTAINER_NAME = 'bmicalculator'
         PORT_MAPPING = '8081:80' // Adjust the port mapping as needed
     }
 
