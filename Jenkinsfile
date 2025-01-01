@@ -9,19 +9,7 @@ pipeline {
 
     stages {
 
-        stage('Clean Up Existing Containers') {
-            steps {
-                script {
-                    // Stop and remove container using simpler commands
-                    bat """
-                    if docker ps -q -f name=${CONTAINER_NAME} >nul 2>&1 (
-                        docker stop ${CONTAINER_NAME}
-                        docker rm ${CONTAINER_NAME}
-                    )
-                    """
-                }
-            }
-        }
+      
 
         stage('Build Docker Image') {
             steps {
@@ -39,12 +27,6 @@ pipeline {
             }
         }
 
-        stage('Verify Container') {
-            steps {
-                script {
-                    bat "docker ps -f name=${CONTAINER_NAME}"
-                }
-            }
-        }
+      
     }
 }
